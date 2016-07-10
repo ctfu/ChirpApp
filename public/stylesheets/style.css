@@ -1,0 +1,25 @@
+body {
+  padding: 70px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#post-stream {
+  margin-top: 50px;
+}
+
+.post{
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+.odd {
+  background: #f2f9ff;
+}
+
+.even {
+  gackground: #eceff3;
+}
