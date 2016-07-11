@@ -1,7 +1,7 @@
 # Modified MEAN Stack Twitter Clone App Study Example From Microsoft Virtual Academy
 
 # What is new? 
-The study example from Microsoft Virtual Academy didn't implement client session, which causes use to be logout every time when the page is refreshed. This example does client session handling through AngularJS module ngcookies. It is a simplified implementation just for demo purpose. Besides, api routes in this example are implemented only through HTTP calls.
+The study example from Microsoft Virtual Academy didn't implement client session, which causes user to be logout every time when the page is refreshed. This example does client session handling through AngularJS module ngCookies. It is a simplified implementation just for demo purpose. Besides, api routes in this example are implemented only through HTTP calls without using ngResources.
 
 # Prerequisite
 1. Node.js -- https://nodejs.org/
