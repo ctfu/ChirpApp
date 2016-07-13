@@ -9,8 +9,9 @@ The study example from Microsoft Virtual Academy didn't implement client session
 
 # How to Run?
 1. Install the prerequisites
-2. Clone repository
-3. npm install
-4. mongod (some operating system might need sudo permission)
-5. npm start
+2. Clone github repository: https://github.com/ctfu/ChirpApp.git
+3. Terminal run: npm install
+4. Terminal run: mongod (some operating system might need sudo permission)
+5. Terminal run: npm start
+6. Open browser: localhost:3000
 
