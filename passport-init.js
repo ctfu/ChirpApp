@@ -55,6 +55,7 @@ module.exports = function(passport){
 				}
 				if(user){
 					console.log("Existing username: " + username);
+					return done(null, false);
 				}else{
 					var newUser = new User();
 					newUser.username = username;

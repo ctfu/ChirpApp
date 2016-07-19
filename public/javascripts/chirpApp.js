@@ -68,6 +68,8 @@ app.controller('authController', function($scope, $rootScope, $http, $location, 
         $cookies.put('current_user', data.user.username);
         $rootScope.current_user = $cookies.get('current_user');
         $location.path('/');
+      }else{
+        $scope.error_message = data.message;
       }
     });
   };
