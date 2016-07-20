@@ -7,32 +7,55 @@
     <link rel="stylesheet" href="stylesheets/style.css">
   </head>
   <body ng-app="chirpApp">
-    <div class="container">
-      <!-- start of navbar -->
-      <nav class="navbar navbar-default navbar-fixed-top">
+        <!-- start of navbar -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a href="#/" class="navbar-brand">Chirp App</a>
+            </div><!-- end navbar-header-->
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#/">Home</a></li>
+                <li><a href="#/services">Services</a></li>
+              </ul>
+              <!--login signup button-->
+              <div class="navbar-right" ng-hide="authenticated">
+                <a href="#/login" class="btn navbar-btn btn-default">Sign in</a>
+                <a href="#/register" class="btn navbar-btn btn-default">Register</a>
+              </div>
+              <!-- start of account setting -->
+              <div ng-show="authenticated">
+                <ul class="nav navbar-nav navbar-right" id="myAccount">
+                  <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> My Account <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#/account/seeting"><span class="glyphicon glyphicon-cog"></span> Setting</a></li>
+                      <li><a href="#/account/profile"><span class="glyphicon glyphicon-refresh"></span> My Profile</a></li>
+                      <li><a ng-click="logout()"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div><!--end account setting-->
+            </div><!--end navbar-collapse-->
+          </div><!--end container-->
+        </nav><!-- end nav-->
+        <!-- start of form container-->
         <div class="container">
-            <a href="#/" class="navbar-brand">Chirp App</a>
-            <p class="navbar-text">MEAN Stack Chirp App Example</p>
-            <div class="navbar-right">
-              <a href="#/login" class="btn navbar-btn btn-default" ng-hide="authenticated">Sign in</a>
-              <a href="#/register" class="btn navbar-btn btn-default" ng-hide="authenticated">Register</a>
-              <p class="navbar-text" ng-show="authenticated"> Welcom {{current_user}}!</p>
-              <a href="#/" class="btn navbar-btn btn-default" ng-show="authenticated" ng-click="logout()">Logout</a>
-            </div>
+          <div class="col-md-offset-2 col-md-8">
+            <div ng-view></div>
+          </div>
         </div>
-      </nav>
-      <!-- end of navbar -->
-      <!-- start of form container-->
-      <div class="container">
-        <div class="col-md-offset-2 col-md-8">
-          <div ng-view></div>
-        </div>
-      </div>
-      <!--end of form container-->
-    </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-cookies.min.js"></script>
-  <script src="javascripts/chirpApp.js"></script>
+        <!--end of form container-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-cookies.min.js"></script>
+    <script src="javascripts/chirpApp.js"></script>
   </body>
 </html>
