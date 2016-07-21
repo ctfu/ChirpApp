@@ -33,6 +33,7 @@ app.config(function($routeProvider){
 
 //mainController
 app.controller('mainController', function($scope, $rootScope, $http){
+  /* get all the posts */
   $scope.refresh = function(){
     $http.get('/api/posts').success(function(data){
       console.log(data);
