@@ -3,6 +3,7 @@ var router = express.Router();
 
 var mongoose = require('mongoose');
 var Post = mongoose.model('Post');
+var User = mongoose.model('User');
 
 //Used for routes that must be authenticated.
 function isAuthenticated (req, res, next) {
@@ -92,6 +93,16 @@ router.route('/posts/:id')
 				res.send(err);
 			}
 			res.json('Post deleted');
+		});
+	});
+
+router.route('/users')
+	.get(function(req, res){
+		User.find(function(err, users){
+			if(err){
+				res.send(err);
+			}
+			res.json(users);
 		});
 	});
 

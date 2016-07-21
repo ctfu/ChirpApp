@@ -30,6 +30,21 @@ app.config(function($routeProvider){
     });
 });
 
+/* a custome directiv for user mentions in the text post form */
+app.directive('mention', function($http){
+  return{
+    restrict: 'A',
+    link: function(scope, element, attrs){
+      $http.get('/api/users').success(function(data){
+        scope.users = data;
+        console.log(scope.users);
+        element.mention({
+          users: scope.users
+        });
+      });
+    }
+  }
+});
 
 //mainController
 app.controller('mainController', function($scope, $rootScope, $http){
